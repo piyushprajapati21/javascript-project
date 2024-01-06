@@ -1,0 +1,29 @@
+<html>
+    <body>
+       <button id="red">Red</button>
+       <button id="green">Green</button>
+    </body>
+</html>
+<script>
+    function init(){
+        let name = 'mozilla';
+        function displayName(){
+            console.log('ppp - '+name);
+        }
+        displayName();
+    }
+   /*  document.getElementById('red').onclick = function(){
+        document.body.style.backgroundColor = 'red'
+    }
+    document.getElementById('green').onclick = function(){
+        document.body.style.backgroundColor = 'green'
+    } */
+    function clickHandler(color){
+        //document.body.style.backgroundColor = color
+        return function() {
+            document.body.style.backgroundColor = color
+        }
+    }
+    document.getElementById('green').onclick = clickHandler('green')
+    document.getElementById('red').onclick = clickHandler('red')
+</script>
